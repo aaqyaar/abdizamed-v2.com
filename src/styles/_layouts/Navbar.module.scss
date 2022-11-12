@@ -1,0 +1,70 @@
+@import "../mixins.scss";
+$nav-height: 70px;
+$content-width: 1000px;
+$text-color: #080707;
+$text-secondary-color: #b0b0b0;
+$secondary-color: #121212;
+$card-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+$padding: 1.5rem;
+$padding-btn: 0.8rem;
+$card-radius: 10px;
+$card-padding: 1.5rem;
+$card-margin: 1rem;
+$card-background: #fff;
+$card-background-hover: #f5f5f5;
+$card-background-active: #e5e5e5;
+
+// transition
+$transition-0_3: all 0.3s ease-in-out;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $card-shadow;
+  padding: $padding;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu {
+  // for-desktop-only
+  @include for-desktop-up {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin-right: 10px;
+    li {
+      margin: 0 10px;
+      padding: 0 10px;
+      border-right: 1px solid $secondary-color;
+      font-family: Inter;
+      &:last-child {
+        border-right: none;
+      }
+      &:hover {
+        color: $text-secondary-color;
+        transition: $transition-0_3;
+      }
+    }
+  }
+}
+
+.resumeBtn {
+  background: $card-background;
+  color: $text-color;
+  padding: $padding-btn;
+  border-radius: $card-radius;
+  font-family: Inter;
+  &:hover {
+    background: $secondary-color;
+    color: $text-secondary-color;
+    transition: $transition-0_3;
+  }
+}
