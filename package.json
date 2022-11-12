@@ -1,0 +1,36 @@
+{
+  "name": "abdizamed.com",
+  "description": "A Full Stack Developer with 2+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Abdi Zamed Mohamed . (abdizamed)",
+    "email": "abdizamedmo@gmail.com"
+  },
+  "homepage": "https://abdizamed.com",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.8",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.3",
+    "mongoose": "^6.7.2",
+    "next": "13.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-transition-group": "^4.4.5",
+    "sass": "^1.56.1",
+    "scrollreveal": "^4.0.9",
+    "typescript": "4.8.4"
+  }
+}
