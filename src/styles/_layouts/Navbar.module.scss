@@ -1,5 +1,5 @@
 @import "../mixins.scss";
-$nav-height: 70px;
+$nav-height: 15rem;
 $content-width: 1000px;
 $text-color: #080707;
 $text-secondary-color: #b0b0b0;
@@ -24,6 +24,7 @@ $transition-0_3: all 0.3s ease-in-out;
   align-items: center;
   box-shadow: $card-shadow;
   padding: $padding;
+  margin-bottom: 2rem;
 }
 
 .logoContainer {
@@ -32,7 +33,8 @@ $transition-0_3: all 0.3s ease-in-out;
   align-items: center;
 }
 
-.menu {
+.nav {
+  display: none;
   // for-desktop-only
   @include for-desktop-up {
     display: flex;
@@ -56,6 +58,26 @@ $transition-0_3: all 0.3s ease-in-out;
   }
 }
 
+.mobileNav {
+  background-color: #121212;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 10px;
+  width: 100%;
+  height: fit-content;
+  // height: $nav-height;
+  li {
+    padding: 0.7rem 0px;
+    list-style: none;
+  }
+  @include for-desktop-up {
+    display: none;
+  }
+}
+
 .resumeBtn {
   background: $card-background;
   color: $text-color;
@@ -67,4 +89,22 @@ $transition-0_3: all 0.3s ease-in-out;
     color: $text-secondary-color;
     transition: $transition-0_3;
   }
+
+  @include for-phone-only {
+    display: block;
+    margin: 0;
+  }
+}
+
+.menu {
+  display: block;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+  @include for-desktop-up {
+    display: none;
+  }
+}
+
+.menuIcon {
+  cursor: pointer;
+  font-size: 1.5rem;
 }
