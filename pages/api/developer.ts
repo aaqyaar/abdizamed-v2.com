@@ -7,15 +7,16 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await connectDB();
   try {
-    connectDB();
     const developers = await Developer.find();
-    if (!developers) {
+    if (!developers.length) {
       return res.status(400).json({
         error: "No developers found",
+        statusCode: 400,
       });
     }
-    res.status(200).json({ success: true, data: developers });
+    res.status(200).json({ success: true, data: developers, statusCode: 200 });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }

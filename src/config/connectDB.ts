@@ -18,15 +18,10 @@ if (!cached) {
 export default async function connectDB() {
   if (cached.conn) return cached.conn;
   if (!cached.promise) {
-    const opts = {
+    cached.promise = await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      bufferCommands: false,
-      bufferMaxEntries: 0,
-      useFindAndModify: true,
-      useCreateIndex: true,
-    };
-    cached.promise = await mongoose.connect(MONGO_URI, opts);
+    } as any);
   }
 
   cached.conn = await cached.promise;
