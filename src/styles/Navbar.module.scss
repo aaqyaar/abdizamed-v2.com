@@ -1,18 +1,8 @@
-@import "../mixins.scss";
+@import "./mixins.scss";
+
 $nav-height: 15rem;
 $content-width: 1000px;
-$text-color: #080707;
-$text-secondary-color: #b0b0b0;
-$secondary-color: #121212;
-$card-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-$padding: 1.5rem;
-$padding-btn: 0.8rem;
-$card-radius: 10px;
-$card-padding: 1.5rem;
-$card-margin: 1rem;
-$card-background: #fff;
-$card-background-hover: #f5f5f5;
-$card-background-active: #e5e5e5;
+$text-color: var(--black-color);
 
 // transition
 $transition-0_3: all 0.3s ease-in-out;
@@ -22,8 +12,8 @@ $transition-0_3: all 0.3s ease-in-out;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  box-shadow: $card-shadow;
-  padding: $padding;
+  box-shadow: var(--shadow-2xl);
+  padding: var(--padding);
   margin-bottom: 2rem;
 }
 
@@ -31,6 +21,7 @@ $transition-0_3: all 0.3s ease-in-out;
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0 20px 0 20px;
 }
 
 .nav {
@@ -45,13 +36,12 @@ $transition-0_3: all 0.3s ease-in-out;
     li {
       margin: 0 10px;
       padding: 0 10px;
-      border-right: 1px solid $secondary-color;
-      font-family: Inter;
+      border-right: 1px solid var(--black-color);
       &:last-child {
         border-right: none;
       }
       &:hover {
-        color: $text-secondary-color;
+        color: var(--gray-color);
         transition: $transition-0_3;
       }
     }
@@ -59,7 +49,7 @@ $transition-0_3: all 0.3s ease-in-out;
 }
 
 .mobileNav {
-  background-color: #121212;
+  background-color: var(--primary-color);
   display: block;
   display: flex;
   flex-direction: column;
@@ -68,10 +58,15 @@ $transition-0_3: all 0.3s ease-in-out;
   padding: 1rem 10px;
   width: 100%;
   height: fit-content;
+  box-shadow: var(--shadow-2xl);
   // height: $nav-height;
   li {
     padding: 0.7rem 0px;
     list-style: none;
+    &:hover {
+      color: var(--gray-color);
+      transition: $transition-0_3;
+    }
   }
   @include for-desktop-up {
     display: none;
@@ -79,15 +74,15 @@ $transition-0_3: all 0.3s ease-in-out;
 }
 
 .resumeBtn {
-  background: $card-background;
-  color: $text-color;
-  padding: $padding-btn;
-  border-radius: $card-radius;
-  font-family: Inter;
+  background: var(--black-color);
+  color: var(--primary-color);
+  padding: var(--padding-btn);
+  border-radius: var(--radius);
   &:hover {
-    background: $secondary-color;
-    color: $text-secondary-color;
-    transition: $transition-0_3;
+    background: var(--primary-color);
+    color: var(--black-color);
+    border: 1px solid var(--black-color);
+    transition: var(--transition-0_3);
   }
 
   @include for-phone-only {

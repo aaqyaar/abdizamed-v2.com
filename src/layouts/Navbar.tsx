@@ -1,10 +1,11 @@
 "use client";
 // styles
-import styles from "styles/_layouts/Navbar.module.scss";
+import styles from "styles/Navbar.module.scss";
 // app
 import React from "react";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+
 type Props = {};
 
 export default function Navbar({}: Props) {
@@ -26,14 +27,15 @@ export default function Navbar({}: Props) {
               <Link href="#about">About</Link>
             </li>
             <li>
+              <Link href="#work">Work</Link>
+            </li>
+            <li>
               <Link href="#projects">Projects</Link>
             </li>
             <li>
               <Link href="#contact">Contact</Link>
             </li>
-            <li>
-              <Link href="/blogs">Blogs</Link>
-            </li>
+
             <li>
               <Link
                 href="/images/abdizamed.svg"
@@ -69,13 +71,13 @@ export default function Navbar({}: Props) {
               <Link href="#about">About</Link>
             </li>
             <li>
+              <Link href="#work">Work</Link>
+            </li>
+            <li>
               <Link href="#projects">Projects</Link>
             </li>
             <li>
               <Link href="#contact">Contact</Link>
-            </li>
-            <li>
-              <Link href="/blogs">Blogs</Link>
             </li>
 
             <li>
