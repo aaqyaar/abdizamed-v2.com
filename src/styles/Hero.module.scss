@@ -39,8 +39,9 @@
       display: flex;
       align-items: center;
       margin: 0.5rem 0.5rem;
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--black-color);
+      padding: 1rem 1rem;
+      border: 0px solid var(--black-color);
+      box-shadow: var(--shadow-xl);
       border-radius: 5px;
       font-size: 1.6rem;
       font-weight: 400;
@@ -50,7 +51,7 @@
         &:hover {
           background: var(--white-color);
           color: var(--black-color);
-          border: 1px solid var(--black-color);
+          border: 0px solid var(--black-color);
         }
       }
       &:hover {
