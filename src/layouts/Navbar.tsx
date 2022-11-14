@@ -8,6 +8,30 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 type Props = {};
 
+interface INav {
+  href: string;
+  title: string;
+  target?: string;
+}
+const navigation: INav[] = [
+  { title: "Blogs", href: "/blogs" },
+  {
+    title: "Github",
+    href: "https://www.github.com/abdi-aaqyaar",
+    target: "_blank",
+  },
+];
+
+const RenderNavContent = ({ title, href, target }: INav) => {
+  return (
+    <li>
+      <Link href={href} target={target}>
+        {title}
+      </Link>
+    </li>
+  );
+};
+
 export default function Navbar({}: Props) {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
@@ -20,28 +44,12 @@ export default function Navbar({}: Props) {
         </div>
         <div id="desktop-menu-nav">
           <ul className={styles.nav}>
+            {navigation.map((nav: INav, i) => (
+              <RenderNavContent key={i} {...nav} />
+            ))}
+            {/* resume pdf */}
             <li>
-              <Link href="#">Home</Link>
-            </li>
-            <li>
-              <Link href="#about">About</Link>
-            </li>
-            <li>
-              <Link href="#work">Work</Link>
-            </li>
-            <li>
-              <Link href="#projects">Projects</Link>
-            </li>
-            <li>
-              <Link href="#contact">Contact</Link>
-            </li>
-
-            <li>
-              <Link
-                href="/images/abdizamed.svg"
-                download
-                className={styles.resumeBtn}
-              >
+              <Link href="/abdizamed.pdf" download className={styles.resumeBtn}>
                 Resume
               </Link>
             </li>
@@ -64,28 +72,12 @@ export default function Navbar({}: Props) {
       <div id="mobile-nav">
         {isOpen && (
           <ul className={styles.mobileNav}>
+            {navigation.map((nav: INav, i) => (
+              <RenderNavContent key={i} {...nav} />
+            ))}
+            {/* resume pdf */}
             <li>
-              <Link href="#">Home</Link>
-            </li>
-            <li>
-              <Link href="#about">About</Link>
-            </li>
-            <li>
-              <Link href="#work">Work</Link>
-            </li>
-            <li>
-              <Link href="#projects">Projects</Link>
-            </li>
-            <li>
-              <Link href="#contact">Contact</Link>
-            </li>
-
-            <li>
-              <Link
-                href="/images/abdizamed.svg"
-                download
-                className={styles.resumeBtn}
-              >
+              <Link href="/abdizamed.pdf" download className={styles.resumeBtn}>
                 Resume
               </Link>
             </li>
